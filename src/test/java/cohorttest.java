@@ -18,17 +18,25 @@ public class cohorttest {
 
 
     @Test
-    public void addInstanceOfStudent(){
+    public void addInstanceOfStudent() {
         Cohort fortran = new Cohort();
 
-        fortran.addStudent(new Student(5,"uziel"));
+        fortran.addStudent(new Student(5, "uziel"));
         assertNotNull(fortran.getStudents());
 
 
 //        student name added
         assertEquals("uziel", fortran.getStudents().get(0).getName());
-
-
     }
+
+    @Test
+    public void cohortInstanceGetCurrentList() {
+        Cohort fortran = new Cohort();
+        Student student = new Student(0,"Uziel");
+        fortran.addStudent(student);
+        assertFalse("is not empty", fortran.getStudents().isEmpty());
+    }
+
+
 
 }
