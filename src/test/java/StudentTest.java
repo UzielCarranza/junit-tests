@@ -24,8 +24,14 @@ public class StudentTest {
         studentOne.addGrade(9);
     }
 
+//   @Test
+//    public void setStudentEmpty(){
+//        assertTrue(studentEmpty.getGrades().isEmpty());
+//    }
+
     @Test
-    public void testEmpty() {
+    public void testGetId() {
         assertTrue(studentEmpty.getGrades().isEmpty());
     }
+
 }
