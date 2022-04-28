@@ -1,51 +1,45 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class Student {
-    long studentId;
+    int id;
     String name;
     ArrayList<Integer> grades;
 
-    public Student() {
+    public int getId() {
+        return id;
     }
 
-    ;
-
-    public Student(String name, int studentId) {
-        this.name = name;
-        this.studentId = studentId;
-        this.grades = new ArrayList<>();
-    }
-
-    //
-    public long getId() {
-        return studentId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    //
-    public void addGrade(int grade) {
-        this.grades.add(grade);
+    public void setName(String name) {
+        this.name = name;
     }
 
-    //
     public ArrayList<Integer> getGrades() {
-        return this.grades;
+        return grades;
     }
 
-    public double getGradeAverage() {
-        Object[] arrayName = this.grades.toArray();
-        Arrays.sort(arrayName);
-        double median;
-        if (arrayName.length % 2 == 0) {
-            median = ((double) arrayName[arrayName.length / 2] + (double) arrayName[arrayName.length / 2 - 1]) / 2;
-        } else {
-            median = (double) arrayName[arrayName.length / 2];
-        }
-        return median;
+    public void setGrades(ArrayList<Integer> grades) {
+        this.grades = grades;
     }
+
+    public void addGrade(int i) {
+        grades = new ArrayList<>();
+        grades.add(i);
+    }
+
+    //    public double getGradeAverage() {
+//        int total = this.grades.stream().reduce(0, (sum, currentGradeElement) -> {
+//            return sum + currentGradeElement;
+//        });
+//        return (double) total / this.grades.size();
+//    }
+
 }
